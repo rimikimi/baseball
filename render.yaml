@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: kbo-standings-simulator
+    runtime: node
+    plan: free
+    buildCommand: ""
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: SCOREBOARD_CACHE_MS
+        value: "8000"

@@ -1,0 +1,22 @@
+{
+  "name": "kbo-standings-simulator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "KBO live score based standings simulator",
+  "license": "MIT",
+  "keywords": [
+    "kbo",
+    "baseball",
+    "standings",
+    "live-score"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "check": "node --check server.mjs && node --check app.js"
+  },
+  "dependencies": {}
+}
