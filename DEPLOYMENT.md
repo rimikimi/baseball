@@ -34,6 +34,21 @@ If configuring manually:
 2. Set the start command to `npm start` if Railway does not detect it.
 3. Add `SCOREBOARD_CACHE_MS=8000` if desired.
 
+## Vercel
+
+Vercel does not run `node server.mjs` as a persistent server. This repository
+therefore includes serverless functions under `api/` and `vercel.json`.
+
+Use these settings:
+
+- Framework Preset: Other
+- Build Command: leave empty
+- Output Directory: leave empty
+- Install Command: `npm install` or leave empty
+
+The frontend is served as static files, while `/api/scoreboard` and `/healthz`
+are served by Vercel functions.
+
 ## Docker
 
 ```bash

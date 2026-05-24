@@ -16,7 +16,7 @@
   },
   "scripts": {
     "start": "node server.mjs",
-    "check": "node --check server.mjs && node --check app.js"
+    "check": "node --check server.mjs && node --check scoreboard-data.mjs && node --check api/scoreboard.js && node --check api/healthz.js && node --check app.js"
   },
   "dependencies": {}
 }
