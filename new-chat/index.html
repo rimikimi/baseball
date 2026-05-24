@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>KBO 오늘 순위 시뮬레이터</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="topbar" aria-labelledby="app-title">
+        <div>
+          <p id="dataStamp" class="eyebrow">2026 KBO · 새로고침 시 최신 스코어 확인</p>
+          <h1 id="app-title">오늘 경기 결과별 순위</h1>
+        </div>
+        <div class="scorebug" aria-label="오늘 경기 수">
+          <span>5</span>
+          <small>games</small>
+        </div>
+      </section>
+
+      <section class="control-band" aria-label="시나리오 빠른 설정">
+        <button class="preset-button active" data-preset="live">기준 스코어 반영</button>
+        <button class="preset-button" data-preset="away">전부 원정승</button>
+        <button class="preset-button" data-preset="home">전부 홈승</button>
+        <button class="preset-button" data-preset="draw">모두 무승부</button>
+        <button class="preset-button ghost" data-preset="reset">초기화</button>
+        <span class="refresh-indicator">10초마다 자동 갱신</span>
+      </section>
+
+      <div class="workspace">
+        <section class="games-panel" aria-labelledby="games-title">
+          <div class="section-header">
+            <h2 id="games-title">오늘 경기</h2>
+            <p>점수를 바꾸거나 승/무패를 직접 선택하세요.</p>
+          </div>
+          <div id="games" class="game-list"></div>
+        </section>
+
+        <section class="standings-panel" aria-labelledby="standings-title">
+          <div class="section-header">
+            <h2 id="standings-title">예상 순위표</h2>
+            <p id="scenarioSummary">기준 스코어가 최종 결과라고 가정합니다.</p>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>현재</th>
+                  <th>예상</th>
+                  <th>팀</th>
+                  <th>승</th>
+                  <th>패</th>
+                  <th>무</th>
+                  <th>승률</th>
+                  <th>게임차</th>
+                  <th>등락</th>
+                </tr>
+              </thead>
+              <tbody id="standings"></tbody>
+            </table>
+          </div>
+          <div class="notes">
+            <div class="diamond" aria-hidden="true">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <p>
+              <span id="sourceNote">
+                승률은 KBO식으로 무승부를 제외해 계산합니다. 현재 순위와 투수·타자는 네이버 스포츠,
+                진행 스코어는 KBO 공식 스코어보드를 새로고침할 때마다 다시 확인합니다.
+              </span>
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
